@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './css/Home.css';
 
 function Home() {
-    const [dernierProjet, setDernierProjet] = useState(null);
+    const [dernierProjet, setDernierProjet] = useState<any>(null);
 
     useEffect(() => {
         fetch('/api/projects')
