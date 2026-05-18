@@ -1,0 +1,115 @@
+/* --- STYLE PC (Par défaut) --- */
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 35px;
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    margin: 20px auto;
+    width: fit-content;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    box-sizing: border-box; /* Empêche le dépassement */
+}
+
+.nav-mobile-label, .menu-toggle {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    display: flex;
+}
+
+/* --- STYLE MOBILE (Écrans < 768px) --- */
+@media (max-width: 768px) {
+    .navbar-container {
+        width: 92%; /* Légèrement réduit pour laisser de l'air sur les côtés */
+        max-width: none; 
+        justify-content: space-between;
+        padding: 12px 20px;
+        border-radius: 30px;
+        margin: 15px auto; /* Centre la pilule */
+        left: 0;
+        right: 0;
+    }
+
+    .nav-mobile-label {
+        display: block;
+        font-weight: 800;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--text-main);
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        padding: 5px;
+    }
+
+    .bar {
+        width: 20px;
+        height: 2px;
+        background: var(--text-main);
+        transition: 0.3s;
+    }
+
+    .bar.open:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .bar.open:nth-child(2) { opacity: 0; }
+    .bar.open:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Le menu qui s'ouvre */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Aligné sous la pilule */
+        left: 0;
+        width: 100%; /* S'aligne sur la largeur de la pilule parente */
+        background: var(--bg-card);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 20px;
+        gap: 20px;
+        box-sizing: border-box; /* IMPORTANT : le padding ne fera pas déborder la box */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .theme-toggle {
+        margin: 10px 0 0 0;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+}

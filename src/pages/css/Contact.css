@@ -1,0 +1,31 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px; /* Padding réduit sur les côtés */
+}
+
+.contact-card {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; /* Largeur max sur PC */
+    box-sizing: border-box; /* Crucial pour pas que le padding fasse déborder */
+    text-align: center;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 25px; /* On réduit l'espace interne sur mobile */
+        max-width: 95%; /* On force la box à rester dans l'écran */
+    }
+    
+    .contact-card h3 {
+        font-size: 1.4rem;
+    }
+}

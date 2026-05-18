@@ -1,0 +1,163 @@
+/* Container principal */
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Grille de projets - RESTAURÉE */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+/* Carte de projet - RESTAURÉE */
+.project-card {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Effet de survol (Hover) - RESTAURÉ */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Taille et aspect des images dans la grille */
+.project-card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    color: var(--text-main) !important;
+    margin: 15px 15px 5px;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    color: var(--text-dim) !important;
+    padding: 0 20px;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.read-more {
+    display: block;
+    padding: 15px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- MODALE / POPUP --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: var(--bg-body);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 750px;
+    max-height: 85vh;
+    position: relative;
+    overflow-y: auto;
+    color: var(--text-main);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: left;
+}
+
+.modal-body h2 {
+    color: var(--accent) !important;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.modal-complete-desc {
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 1.1rem;
+    white-space: pre-wrap; 
+}
+
+.modal-complete-desc img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Bouton de fermeture */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white !important;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.close-button:hover {
+    background: var(--accent);
+    transform: rotate(90deg);
+}
+
+/* --- LE SEUL PATCH NÉCESSAIRE POUR MOBILE --- */
+@media (max-width: 400px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Force une colonne propre sur tout petit écran */
+    }
+    .project-card {
+        min-width: 0; /* Empêche la carte de pousser les bords */
+    }
+}

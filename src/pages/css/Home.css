@@ -1,0 +1,86 @@
+.home-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--accent) !important;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.latest-card {
+    display: flex;
+    gap: 30px;
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: var(--radius);
+    align-items: center;
+}
+
+.project-image img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.short-desc {
+    color: var(--text-dim) !important;
+}
+
+.btn-view-projects {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: white !important;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* --- CORRECTIF MOBILE POUR LA PAGE D'ACCUEIL --- */
+
+@media (max-width: 768px) {
+    .latest-card {
+        flex-direction: column !important; /* Empile l'image et le texte verticalement */
+        align-items: flex-start !important;
+        padding: 0 !important; /* On enlève le padding pour que l'image puisse toucher les bords */
+        overflow: hidden;
+        gap: 0; /* On gère l'espace via le padding du texte plus bas */
+    }
+
+    .project-image {
+        width: 100% !important;
+    }
+
+    .project-image img {
+        width: 100% !important;
+        height: 200px !important; /* On lui donne un peu plus de hauteur sur mobile */
+        border-radius: 0; /* L'image s'adapte aux bords de la carte parente */
+    }
+
+    /* On crée une zone de texte avec du padding pour que ça ne colle pas aux bords */
+    .latest-card > div:last-child { 
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box; /* Crucial pour que le padding ne fasse pas déborder */
+    }
+
+    .latest-card h3 {
+        margin-top: 0;
+    }
+}
