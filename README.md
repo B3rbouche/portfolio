@@ -1,70 +1,178 @@
-# Getting Started with Create React App
+# 🌐 Portfolio — Lucas Barbier
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Site web personnel développé avec **React** et **TypeScript**, mettant en valeur mes projets, mes compétences et mes informations de contact.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Table des matières
 
-### `npm start`
+- [Aperçu](`#aperçu`)
+- [Technologies utilisées](`#technologies-utilisées`)
+- [Prérequis](`#prérequis`)
+- [Installation](`#installation`)
+- [Scripts disponibles](`#scripts-disponibles`)
+- [TypeScript](`#typescript`)
+- [Structure du projet](`#structure-du-projet`)
+- [Composants principaux](`#composants-principaux`)
+- [Pages](`#pages`)
+- [Licence](`#licence`)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📖 Aperçu
 
-### `npm test`
+Ce portfolio présente mes réalisations professionnelles et personnelles. Il intègre une interface moderne grâce à **Chakra UI** et des animations fluides via **Framer Motion**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Technologies utilisées
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Technologie | Version | Rôle |
+|---|---|---|
+| [React](https://react.dev/) | ^19.2.4 | Framework UI |
+| [TypeScript](https://www.typescriptlang.org/) | ^6.0.3 | Typage statique |
+| [Chakra UI](https://chakra-ui.com/) | ^3.35.0 | Bibliothèque de composants |
+| [Framer Motion](https://www.framer-motion.com/) | ^12.39.0 | Animations |
+| [Emotion](https://emotion.sh/) | ^11.x | CSS-in-JS (requis par Chakra UI) |
+| [React Router DOM](https://reactrouter.com/) | ^7.13.2 | Routage côté client |
+| [React GA4](https://github.com/PriceRunner/react-ga4) | ^3.0.1 | Google Analytics 4 |
+| [Web Vitals](https://web.dev/vitals/) | ^2.1.4 | Mesure des performances |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✅ Prérequis
 
-### `npm run eject`
+Avant de commencer, assure-toi d'avoir installé sur ta machine :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Node.js](https://nodejs.org/) (version LTS recommandée)
+- [Yarn](https://yarnpkg.com/) (gestionnaire de paquets)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pour vérifier les versions installées :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+node --version
+yarn --version
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Cloner le dépôt
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/B3rbouche/portfolio.git
+cd portfolio
+```
 
-### Code Splitting
+### 2. Installer les dépendances avec Yarn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+yarn install
+```
 
-### Analyzing the Bundle Size
+### 3. Lancer le serveur de développement
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+yarn start
+```
 
-### Making a Progressive Web App
+L'application sera accessible à l'adresse [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📦 Scripts disponibles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Commande | Description |
+|---|---|
+| `yarn start` | Lance le serveur de développement |
+| `yarn build` | Compile le projet pour la production dans le dossier `build/` |
+| `yarn test` | Exécute les tests unitaires |
+| `yarn eject` | Éjecte la configuration Create React App (irréversible) |
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔷 TypeScript
 
-### `npm run build` fails to minify
+Ce projet est entièrement rédigé en **TypeScript**, un sur-ensemble typé de JavaScript qui améliore la maintenabilité et la détection d'erreurs à la compilation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Configuration (`tsconfig.json`)
+
+- **Cible** : `ES2020` — compatibilité moderne avec les navigateurs récents.
+- **JSX** : `react-jsx` — support natif de la syntaxe JSX dans les fichiers `.tsx`.
+- **Mode strict** : désactivé (`"strict": false`) pour faciliter la migration progressive.
+- **`allowJs`** : activé pour permettre la coexistence de fichiers `.js` et `.ts`.
+- **`moduleResolution`** : `node` — résolution des modules à la manière de Node.js.
+- **`resolveJsonModule`** : activé pour importer des fichiers `.json` directement.
+- **`isolatedModules`** : activé pour une compatibilité optimale avec les outils de build.
+
+### Bonnes pratiques TypeScript appliquées
+
+- Les composants React utilisent l'extension `.tsx`.
+- Les types globaux (ex. : déclarations de modules d'images) sont définis dans `src/declarations.d.tsx`.
+- Les types des bibliothèques tierces sont installés via `@types/react`, `@types/react-dom`, etc.
+
+---
+
+## 📁 Structure du projet
+
+```
+portfolio/
+├── public/                  # Fichiers statiques publics
+│   ├── docs/
+│   │   └── CV Lucas Barbier.pdf
+│   ├── images/              # Images du portfolio
+│   ├── index.html
+│   └── manifest.json
+├── src/                     # Code source
+│   ├── components/          # Composants réutilisables
+│   │   ├── CookieBanner.tsx
+│   │   ├── Footerbar.tsx
+│   │   ├── Navbar.tsx
+│   │   └── css/
+│   ├── pages/               # Pages de l'application
+│   │   ├── Admin.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Home.tsx
+│   │   ├── Legal.tsx
+│   │   ├── Projects.tsx
+│   │   └── css/
+│   ├── App.tsx              # Composant racine et routage
+│   ├── declarations.d.tsx   # Déclarations de types globaux
+│   ├── index.tsx            # Point d'entrée de l'application
+│   └── reportWebVitals.tsx  # Mesure des performances
+├── package.json
+├── tsconfig.json
+└── yarn.lock
+```
+
+---
+
+## 🧩 Composants principaux
+
+### `Navbar.tsx`
+Barre de navigation présente sur toutes les pages. Permet de naviguer entre les différentes sections du portfolio.
+
+### `Footerbar.tsx`
+Pied de page affiché en bas de chaque page. Contient des informations de contact et des liens utiles.
+
+### `CookieBanner.tsx`
+Bandeau de consentement aux cookies, conforme aux réglementations RGPD. S'affiche lors de la première visite de l'utilisateur.
+
+---
+
+## 📄 Pages
+
+| Page | Chemin | Description |
+|---|---|---|
+| **Accueil** | `Home.tsx` | Page principale de présentation |
+| **Projets** | `Projects.tsx` | Liste et détails des projets réalisés |
+| **Contact** | `Contact.tsx` | Formulaire et informations de contact |
+| **Mentions légales** | `Legal.tsx` | Mentions légales et politique de confidentialité |
+| **Administration** | `Admin.tsx` | Page d'administration (accès restreint) |
+
+---
+
+## 📜 Licence
+
+Ce projet est un portfolio personnel. Tous droits réservés © Lucas Barbier.
